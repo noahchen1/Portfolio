@@ -28,7 +28,7 @@
 
 @keyframes transition-layer {
     0% { width: 50%; transform: skewx(50deg) translateX(-300px); }
-    50% { width: 300%; transform: skewx(50deg) translateX(-250px); }
+    50% { width: 600%; transform: skewx(50deg) translateX(-250px); }
     100% { transform: skewx(50deg) translateX(3000px); width: 500%; }
 }
 
@@ -596,8 +596,127 @@
     }
 }
 
+
+
+/* mobile */
+
+
 @media only screen and (max-width: 650px) {
+
+    .page-loading-screen p {
+        display: inline-block;
+        margin-top: 5em;
+        font-size: 3em;
+        font-weight: 800;
+        color: rgba(0, 0, 0, 0.7);
+        padding-left: 0.5em;
+        letter-spacing: 0.2em;
+        opacity: 0;
+        animation: fade-in 1s forwards;
+    }
+
+    .welcome-text h1 {
+        margin-top: 0.5em;
+        font-size: 1.2em;
+        letter-spacing: 0.2em;
+    }
+
+    .welcome-text-cover {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        animation: text-transition 3s forwards;
+        animation-delay: 1s;
+    }
+
+    .about-text {
+        position: absolute;
+        top: 38%;
+        right: 0;
+        left: 0;
+        font-size: 3em;
+        color: white;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+    }
+
+    .about-me {
+        display: inline-block;
+        width: 100%;
+        justify-content: center;
+        right: 0.5em;
+        left: 0.5em;
+        position: relative;
+    }
+
+    .about-me-text {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .intro-text {
+        font-size: 2.5em;
+        font-family: 'Hind Siliguri', sans-serif;
+        font-weight: 800;
+        line-height: 1.2em;
+        color: rgba(0, 0, 0, 0.7);
+    }
+
+    .portfolio-picture {
+        display: none;
+        width: 0;
+    }
+
     .skill-level {
         display: none;
+    }
+
+    .work-samples-title {
+        text-align: center;
+        font-size: 2em;
+        font-family: 'Hind Siliguri', sans-serif;
+        color: rgba(0, 0, 0, 0.7);
+        font-weight: 600;
+        letter-spacing: 0.1em;
+    }
+
+    .page-feature {
+        margin: 2em 0;
+        font-size: 1.2em;
+        left: 0;
+        right: 0;
+    }
+
+    .project-feature {
+        margin: 2em 0;
+        font-size: 1.2em;
+        left: 0;
+        right: 0;
+    }
+
+    .project-text {
+        position: absolute;
+        color: whitesmoke;
+        font-size: 4em;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        top: 35%;
+        left: 0;
+        right: 0;
+        z-index: 2;
+    }
+
+    .project-header-img {
+        object-fit: cover;
+        top: 0;
+        right: 0;
+        width: 99%;
+        height: 90%;
+        margin: 1em 0.5em;
+    
     }
 }
