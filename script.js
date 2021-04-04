@@ -76,7 +76,7 @@ window.onload = function() {
 
         /* Work Sample Transition */
 
-        if(window.scrollY >= 1000) {
+        if(window.scrollY >= 900) {
             workSampleTitle.style.opacity = '1'
             workSampleTitle.style.transform = 'translateY(0)'
             workSampleTitle.style.transition = '1s ease-in-out'
@@ -90,7 +90,7 @@ window.onload = function() {
 
         /* Landing Page Showcase */
 
-        if(window.scrollY >= 1600) {
+        if(window.scrollY >= 1400) {
             pageTitle.style.opacity = '1'
             pageTitle.style.transform = 'rotateY(0) translateX(0) translateY(0)'
             pageTitle.style.transition = '1s ease-in-out'

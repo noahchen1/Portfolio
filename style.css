@@ -671,9 +671,55 @@
         width: 0;
     }
 
+    
     .skill-level {
+        position: absolute;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-around;
+        width: 360px;
+        height: 150px;
+        left: 0;
+        top: 270px;
+    }
+    
+    .skill-name {
+        margin-right: 0.5em;
+        font-weight: 800;
+        font-size: 1.2em;
+        color: darkcyan;
+    }
+    
+    .html-skill-name {
+        margin-right: 3em;
+    }
+    
+    .css-skill-name {
+        margin-right: 3.5em;
+    }
+    
+    
+    .individual-skill-level {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 60px;
+        margin-top: 10px;
+    } 
+    
+    
+    .skill-level-bar {
+        width: 60px;
+        height: 10px;
+        background-color: rgba(161, 161, 161, 0.493);
+        transform: skewx(-40deg);
+        margin: 0 0.5em;
+    } 
+
+    .skill-level-name {
         display: none;
     }
+    
 
     .work-samples-title {
         text-align: center;
@@ -708,6 +754,13 @@
         left: 0;
         right: 0;
         z-index: 2;
+    }
+
+    .project-header {
+        height: 500px;
+        position: relative; 
+        text-align: center;
+        margin: 150px 0;
     }
 
     .project-header-img {
