@@ -30,48 +30,74 @@ setTimeout( () => {
 }, 5500)
 
 
+
 window.onload = function() {
     const portfolioPic = document.querySelector('.portfolio-picture')
     const aboutTextVisibility = document.querySelector('.about-text-wrapper')
     const projectWrapper = document.querySelector('.project-header-wrapper')
     const projectImage = document.querySelector('.project-header-img')
     const projects = document.querySelectorAll('.project')
-    const skillLevel = document.querySelector('.skill-level')
-    const intermediaLevels = document.querySelectorAll('.intermedia-level')
+    //const skillLevel = document.querySelector('.skill-level')
+    //const intermediaLevels = document.querySelectorAll('.intermedia-level')
+
+    const webAppTittle = document.querySelector('.webApp-title')
+    const webAppFeature = document.querySelector('.webApp-feature')
+    const framework = document.querySelectorAll('.framework')
+    const webAppVidCover = document.querySelector('.webApp-vid-cover')
+
+
     const pageTitle = document.querySelector('.page-title')
     const pageFeature = document.querySelector('.page-feature')
     const techLanguages = document.querySelectorAll('.tech-language')
     const videoWrapper = document.querySelector('.ecommerce-vid-cover')
+
     const workSampleTitle = document.querySelector('.work-samples-title')
     const hr = document.querySelector('.work-samples-hr')
-   
+    const icons = document.querySelectorAll('.fab')
+    //const techStack = document.querySelector('.techStack')
+
 
     window.addEventListener('scroll', scrollEffect)
 
     function scrollEffect() {
-        if(window.scrollY >= 120) {
+
+        if(window.scrollY >= 150) {
             portfolioPic.style.opacity= '1'
             portfolioPic.style.transform = 'translateX(0px)'
             portfolioPic.style.transition = '1s ease-in-out'
             aboutTextVisibility.style.animation = 'text-transition 2s forwards'
             aboutTextVisibility.style.animationDelay = '0.5s'
-            skillLevel.style.opacity = '1'
-            skillLevel.style.transform = 'translateX(0px)'
-            skillLevel.style.transition = '1s ease-in-out'
-
-            for (var i=0; i < intermediaLevels.length; i++) {
-                intermediaLevels[i].style.animation = 'glowing 2s forwards'
-                intermediaLevels[i].style.animationDelay = '1s'
+           
+            for (var i=0; i < icons.length; i++) {
+                icons[i].style.opacity = '1'
+                icons[i].style.transform = 'rotateY(0)'
+                icons[i].style.transition = '1.5s ease-in-out'
             }
-            
+
+            //skillLevel.style.opacity = '1'
+            //skillLevel.style.transform = 'translateX(0px)'
+            //skillLevel.style.transition = '1s ease-in-out'
+
+           //for (var i=0; i < intermediaLevels.length; i++) {
+           //     intermediaLevels[i].style.animation = 'glowing 2s forwards'
+           //     intermediaLevels[i].style.animationDelay = '1s'
+           // }           
         } 
         
         else {
+
             portfolioPic.style.opacity = '0'
             portfolioPic.style.tranform = 'translateX(300px)'
-            skillLevel.style.opacity = '0'
-            skillLevel.style.transform = 'translateX(-500px)'
 
+            
+            for (var i=0; i < icons.length; i++) {
+                icons[i].style.opacity = 0
+                icons[i].style.transform = 'rotateY(60deg)'
+            }
+
+           // skillLevel.style.opacity = '0'
+            //skillLevel.style.transform = 'translateX(-500px)'
+       
         }
 
         /* Work Sample Transition */
@@ -88,9 +114,38 @@ window.onload = function() {
             workSampleTitle.style.transform = 'translateY(150px)'
         }
 
-        /* Landing Page Showcase */
+        /* Spotify Player Shocase */
 
         if(window.scrollY >= 1400) {
+            webAppTittle.style.opacity = '1'
+            webAppTittle.style.transform = 'rotateY(0) translateX(0) translateY(0)'
+            webAppTittle.style.transition = '1s ease-in-out'
+            webAppFeature.style.opacity = '1'
+            webAppFeature.style.transform = 'rotateY(0) translateX(0) translateY(0)'
+            webAppFeature.style.transition = '1s ease-in-out'
+            for(var i=0; i < framework.length; i++) {
+                framework[i].style.opacity = '1'
+                framework[i].style.transform = 'rotateY(0) translateX(0) translateY(0)'
+                framework[i].style.transition = '1s ease-in-out'
+            } 
+            webAppVidCover.style.animation = 'text-transition 1.5s ease forwards'
+        }
+
+        else {
+            webAppTittle.style.opacity = '0'
+            webAppTittle.style.transform = 'rotateY(60deg) translateX(100px) translateY(100px)'
+            webAppFeature.style.opacity = '0'
+            webAppFeature.style.transform = 'rotateY(60deg) translateX(100px) translateY(100px)'
+            for(var i=0; i < framework.length; i++) {
+                framework[i].style.opacity = '0'
+                framework[i].style.transform = 'rotateY(60deg) translateX(100px) translateY(100px)'
+
+            }
+        }
+
+        /* Landing Page Showcase */
+
+        if(window.scrollY >= 2300) {
             pageTitle.style.opacity = '1'
             pageTitle.style.transform = 'rotateY(0) translateX(0) translateY(0)'
             pageTitle.style.transition = '1s ease-in-out'
@@ -119,15 +174,15 @@ window.onload = function() {
 
         /* Project Header */
 
-        if(window.scrollY >= 3800) {
-            projectWrapper.style.animation = 'text-transition 1.5s ease forwards'
+        if(window.scrollY >= 4600) {
+            projectWrapper.style.animation = 'text-transition 1.5s forwards'
             projectImage.style.animation = 'blur-filter 2s ease forwards'
             projectImage.style.animationDelay = '0.5s'
         }
 
         /* Projects */
 
-        if(window.scrollY >= 4200) {
+        if(window.scrollY >= 5300) {
             for(var i=0; i < projects.length; i++) {
                 projects[i].style.opacity = '1'
                 projects[i].style.transform = 'scale(1) translateY(0)'
@@ -149,6 +204,7 @@ window.onload = function() {
     scrollEffect()
 
 }
+
 
 
 
