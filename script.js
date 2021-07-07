@@ -45,11 +45,16 @@ window.onload = function() {
     const framework = document.querySelectorAll('.framework')
     const webAppVidCover = document.querySelector('.webApp-vid-cover')
 
+    const searchToolTitle = document.querySelector('.search-tool-title')
+    const searchToolFeature = document.querySelector('.search-tool-feature')
+    const searchToolFramework = document.querySelectorAll('.search-tool-framewrok')
+    const searchToolWrapper = document.querySelector('.search-tool-vid-cover')
 
-    const pageTitle = document.querySelector('.page-title')
-    const pageFeature = document.querySelector('.page-feature')
-    const techLanguages = document.querySelectorAll('.tech-language')
-    const videoWrapper = document.querySelector('.ecommerce-vid-cover')
+
+    //const pageTitle = document.querySelector('.page-title')
+    //const pageFeature = document.querySelector('.page-feature')
+    //const techLanguages = document.querySelectorAll('.tech-language')
+    //const videoWrapper = document.querySelector('.ecommerce-vid-cover')
 
     const workSampleTitle = document.querySelector('.work-samples-title')
     const hr = document.querySelector('.work-samples-hr')
@@ -143,8 +148,36 @@ window.onload = function() {
             }
         }
 
-        /* Landing Page Showcase */
+        if(window.scrollY >= 2300) {
+            searchToolTitle.style.opacity = '1'
+            searchToolTitle.style.transform = 'rotateY(0) translateX(0) translateY(0)'
+            searchToolTitle.style.transition = '1s ease-in-out'
+            searchToolFeature.style.opacity = '1'
+            searchToolFeature.style.transform = 'rotateY(0) translateX(0) translateY(0)'
+            searchToolFeature.style.transition = '1s ease-in-out'
+            for(var i=0; i < searchToolFramework.length; i++) {
+                searchToolFramework[i].style.opacity = '1'
+                searchToolFramework[i].style.transform = 'rotateY(0) translateX(0) translateY(0)'
+                searchToolFramework[i].style.transition = '1s ease-in-out'
+            } 
+            searchToolWrapper.style.animation = 'text-transition 1.5s ease forwards'
+        }
 
+        else {
+            searchToolTitle.style.opacity = '0'
+            searchToolTitle.style.transform = 'rotateY(60deg) translateX(100px) translateY(100px)'
+            searchToolFeature.style.opacity = '0'
+            searchToolFeature.style.transform = 'rotateY(60deg) translateX(100px) translateY(100px)'
+            for(var i=0; i < searchToolFramework.length; i++) {
+                searchToolFramework[i].style.opacity = '0'
+                searchToolFramework[i].style.transform = 'rotateY(60deg) translateX(100px) translateY(100px)'
+
+            }
+        }
+
+
+        /* Landing Page Showcase, archieved */
+/*
         if(window.scrollY >= 2300) {
             pageTitle.style.opacity = '1'
             pageTitle.style.transform = 'rotateY(0) translateX(0) translateY(0)'
@@ -171,13 +204,13 @@ window.onload = function() {
 
             }
         }
-
+*/
         /* Project Header */
 
         if(window.scrollY >= 4600) {
             projectWrapper.style.animation = 'text-transition 1.5s forwards'
-            projectImage.style.animation = 'blur-filter 2s ease forwards'
-            projectImage.style.animationDelay = '0.5s'
+            projectImage.style.animation = 'blur-filter 1s ease forwards'
+            projectImage.style.animationDelay = '1.5s'
         }
 
         /* Projects */

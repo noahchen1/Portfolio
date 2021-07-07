@@ -349,7 +349,65 @@
     object-fit: cover;
 }
 
-/* Ecommerce-landing-page */
+/* Nutrients-Search-Tool */
+
+.nutrition-search-tool {
+    margin: 8em 1em;
+}
+
+.search-tool-intro {
+    text-align: center;
+    padding-top: 5em;
+}
+
+.search-tool-title {
+    font-size: 2em;
+    font-weight: 600;
+    color: (0, 0, 0, 0.7);
+}
+
+.search-tool-feature {
+    margin: 2em 8em;
+    font-size: 1.2em;
+    left: 0;
+    right: 0;
+}
+
+.search-tool-framewrok {
+    margin: 0.5em 0;
+    font-weight: 800;
+    font-size: 1.2em;
+    color: rgba(0, 139, 139, 0.7);
+}
+
+.search-tool-vid-container {
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: 8em 0;
+    display: flex;
+    justify-content: center;
+}
+
+.search-tool-vid-cover {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+}
+
+.search-tool-vid {
+    width: 100%;
+    height: 600px;
+    max-width: 1400px;
+    object-fit: cover;
+}
+
+
+/* Ecommerce-landing-page, archieved */
 
 .ecommerce-landing-page {
 
@@ -359,7 +417,6 @@
 .work-samples-hr {
     margin-top: 1em;
     width: 0%;
-
 }
 
 .landing-page-intro {
