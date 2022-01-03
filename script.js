@@ -37,8 +37,6 @@ window.onload = function() {
     const projectWrapper = document.querySelector('.project-header-wrapper')
     const projectImage = document.querySelector('.project-header-img')
     const projects = document.querySelectorAll('.project')
-    //const skillLevel = document.querySelector('.skill-level')
-    //const intermediaLevels = document.querySelectorAll('.intermedia-level')
 
     const webAppTittle = document.querySelector('.webApp-title')
     const webAppFeature = document.querySelector('.webApp-feature')
@@ -50,16 +48,15 @@ window.onload = function() {
     const searchToolFramework = document.querySelectorAll('.search-tool-framewrok')
     const searchToolWrapper = document.querySelector('.search-tool-vid-cover')
 
+    const activityTrackerTitle = document.querySelector('.activity-tracker-title')
+    const activityTrackerFeature = document.querySelector('.activity-tracker-feature')
+    const activityTrackerFramework = document.querySelectorAll('.activity-tracker-framework')
+    const activityTrackerCover = document.querySelector('.activity-tracker-vid-cover')
 
-    //const pageTitle = document.querySelector('.page-title')
-    //const pageFeature = document.querySelector('.page-feature')
-    //const techLanguages = document.querySelectorAll('.tech-language')
-    //const videoWrapper = document.querySelector('.ecommerce-vid-cover')
 
     const workSampleTitle = document.querySelector('.work-samples-title')
     const hr = document.querySelector('.work-samples-hr')
     const icons = document.querySelectorAll('.fab')
-    //const techStack = document.querySelector('.techStack')
 
 
     window.addEventListener('scroll', scrollEffect)
@@ -79,14 +76,6 @@ window.onload = function() {
                 icons[i].style.transition = '1.5s ease-in-out'
             }
 
-            //skillLevel.style.opacity = '1'
-            //skillLevel.style.transform = 'translateX(0px)'
-            //skillLevel.style.transition = '1s ease-in-out'
-
-           //for (var i=0; i < intermediaLevels.length; i++) {
-           //     intermediaLevels[i].style.animation = 'glowing 2s forwards'
-           //     intermediaLevels[i].style.animationDelay = '1s'
-           // }           
         } 
         
         else {
@@ -100,9 +89,6 @@ window.onload = function() {
                 icons[i].style.transform = 'rotateY(60deg)'
             }
 
-           // skillLevel.style.opacity = '0'
-            //skillLevel.style.transform = 'translateX(-500px)'
-       
         }
 
         /* Work Sample Transition */
@@ -148,6 +134,8 @@ window.onload = function() {
             }
         }
 
+        /* Search Tool Showcase */
+
         if(window.scrollY >= 2300) {
             searchToolTitle.style.opacity = '1'
             searchToolTitle.style.transform = 'rotateY(0) translateX(0) translateY(0)'
@@ -175,36 +163,33 @@ window.onload = function() {
             }
         }
 
+        /* Activity Tracker Showcase*/
 
-        /* Landing Page Showcase, archieved */
-/*
-        if(window.scrollY >= 2300) {
-            pageTitle.style.opacity = '1'
-            pageTitle.style.transform = 'rotateY(0) translateX(0) translateY(0)'
-            pageTitle.style.transition = '1s ease-in-out'
-            pageFeature.style.opacity = '1'
-            pageFeature.style.transform = 'rotateY(0) translateX(0) translateY(0)'
-            pageFeature.style.transition = '1s ease-in-out'
-            for(var i=0; i < techLanguages.length; i++) {
-                techLanguages[i].style.opacity = '1'
-                techLanguages[i].style.transform = 'rotateY(0) translateX(0) translateY(0)'
-                techLanguages[i].style.transition = '1s ease-in-out'
+        if(window.scrollY >= 3300) {
+            activityTrackerTitle.style.opacity = '1'
+            activityTrackerTitle.style.transform = 'rotateY(0) translateX(0) translateY(0)'
+            activityTrackerTitle.style.transition = '1s ease-in-out'
+            activityTrackerFeature.style.opacity = '1'
+            activityTrackerFeature.style.transform = 'rotateY(0) translateX(0) translateY(0)'
+            activityTrackerFeature.style.transition = '1s ease-in-out'
+            for(var i=0; i < activityTrackerFramework.length; i++) {
+                activityTrackerFramework[i].style.opacity = '1'
+                activityTrackerFramework[i].style.transform = 'rotateY(0) translateX(0) translateY(0)'
+                activityTrackerFramework[i].style.transition = '1s ease-in-out'
             } 
-            videoWrapper.style.animation = 'text-transition 1.5s ease forwards'
-        }
-
-        else {
-            pageTitle.style.opacity = '0'
-            pageTitle.style.transform = 'rotateY(60deg) translateX(100px) translateY(100px)'
-            pageFeature.style.opacity = '0'
-            pageFeature.style.transform = 'rotateY(60deg) translateX(100px) translateY(100px)'
-            for(var i=0; i < techLanguages.length; i++) {
-                techLanguages[i].style.opacity = '0'
-                techLanguages[i].style.transform = 'rotateY(60deg) translateX(100px) translateY(100px)'
+            activityTrackerCover.style.animation = 'text-transition 1.5s ease forwards'
+        } else {
+            activityTrackerTitle.style.opacity = '0'
+            activityTrackerTitle.style.transform = 'rotateY(60deg) translateX(100px) translateY(100px)'
+            activityTrackerFeature.style.opacity = '0'
+            activityTrackerFeature.style.transform = 'rotateY(60deg) translateX(100px) translateY(100px)'
+            for(var i=0; i < activityTrackerFramework.length; i++) {
+                activityTrackerFramework[i].style.opacity = '0'
+                activityTrackerFramework[i].style.transform = 'rotateY(60deg) translateX(100px) translateY(100px)'
 
             }
         }
-*/
+
         /* Project Header */
 
         if(window.scrollY >= 4600) {
@@ -240,148 +225,4 @@ window.onload = function() {
 
 
 
-
-
-
-
-
-
-/* Calculator APP */
-
-class Calculator {
-    constructor(previousOperandText, currentOperandText) {
-        this.previousOperandText = previousOperandText
-        this.currentOperandText = currentOperandText
-        this.clear()
-    }
-
-    clear() {
-        this.currentOperand = ''
-        this.previousOperand = ''
-        this.operation = undefined
-    }
-
-    delete() {
-
-    }
-
-    appendNumber(number) {
-        if (number === '.' && this.currentOperand.includes('.')) return
-        this.currentOperand = this.currentOperand.toString() + number.toString()
-    }
-
-    doOperation(operation) {
-        if (this.currentOperand === '') return
-        if (this.previousOperand !== '') {
-            this.compute()
-        }
-        this.operation = operation
-        this.previousOperand = this.currentOperand
-        this.currentOperand = ''
-    }
-
-    compute() {
-        let computation
-        const firstInput = parseFloat(this.previousOperand)
-        const secondInput = parseFloat(this.currentOperand)
-        
-        switch (this.operation) {
-            case '+':
-                computation = firstInput + secondInput
-                break
-            case '-':
-                computation = firstInput - secondInput 
-                break
-            case 'x':
-                computation = firstInput * secondInput
-                break
-            case '÷':
-                computation = firstInput / secondInput
-                break
-            case '+/-':
-                if (firstInput > 0 || firstInpute < 0) {
-                    computation = -1 * firstInput
-                } else {
-                    computation = undefined
-                }
-                break
-            case '%':
-                computation = firstInput / 100
-                break
-            default: 
-                return
-        }
-
-        this.currentOperand = computation 
-        this.operation = undefined
-        this.previousOperand = ''
-    }
-
-    displayNumber(number) {
-        const stringNumber = number.toString()
-        const integer = parseFloat(stringNumber.split('.')[0])
-        const decimal = stringNumber.split('.')[1]
-
-        let integerNumber 
-        if (isNaN(integer)) {
-            integerNumber = ''
-        } else {
-            integerNumber = integer.toLocaleString('en')
-        }
-        if (decimal != null) {
-            return `${integerNumber}.${decimal}`
-        } else {
-            return integerNumber
-        }
-    }
-
-    updateDisplay() {
-        this.currentOperandText.innerText = this.displayNumber(this.currentOperand)
-        if (this.operation != null) {
-            this.previousOperandText.innerText = 
-            `${this.displayNumber(this.previousOperand)} ${this.operation}`
-        } else {
-            this.previousOperandText.innerText = ''
-        }
-    }
-
-}
-
-const previousOperandText = document.querySelector('.previous-operand')
-const currentOperandText = document.querySelector('.current-operand')
-const numberButtons = document.querySelectorAll('.number')
-const operationButtons = document.querySelectorAll('.operation')
-const clearButton = document.querySelector('.clear')
-const signChangeButton = document.querySelector('.sign-change')
-const percentButton = document.querySelector('.percent')
-const equalButton = document.querySelector('.equal')
-
-
-
-
-const calculator = new Calculator(previousOperandText, currentOperandText)
-
-numberButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        calculator.appendNumber(button.innerText)
-        calculator.updateDisplay()
-    })
-})
-
-operationButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        calculator.doOperation(button.innerText)
-        calculator.updateDisplay()
-    })
-})
-
-equalButton.addEventListener('click', (button) => {
-    calculator.compute()
-    calculator.updateDisplay()
-})
-
-clearButton.addEventListener('click', (button) => {
-    calculator.clear()
-    calculator.updateDisplay()
-})
 
