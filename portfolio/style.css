@@ -1,0 +1,157 @@
+@keyframes video-transform {
+    0% {}
+    100% { transform: scaleX(0.8) scaleY(0.7) translateY(-5em); }
+}
+
+@keyframes text-transition {
+    0% { width: 100%; }
+    100% { width: 0%;}
+}
+
+@keyframes hrline{
+    0% {width: 90%;}
+    100% {width: 70%;}
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Mulish', sans-serif;
+}
+
+#banner-container {
+    text-align: center;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+#banner-bg {
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: video-transform 3.5s forwards;
+}
+
+#banner-content {
+    position: absolute;
+    top: 38%;
+    right: 0;
+    left: 0;
+    font-size: 4em;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+#intro-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+#intro-container {
+    display: flex;
+    justify-content: center;
+    right: 1em;
+    left: 1em;
+    position: relative;
+}
+
+#intro-text-container {
+    width: 50%;
+    height: auto;
+    max-width: 600px;
+    position: relative;
+    margin-right: 8em;
+}
+
+#portrait {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-top: 2em;
+    margin-left: 2em;
+    box-shadow: 5px 5px 15px 5px #00000069;
+}
+
+.intro-heading {
+    font-size: 3.5em;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-weight: 800;
+    line-height: 1.2em;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#intro-content {
+    font-size: 1.2em;
+    line-height: 1.5em;
+    margin-top: 3em;
+}
+
+#icons-container {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    justify-content: space-around;
+    margin-top: 80px;
+    width: 550px;
+}
+
+.fab {
+    font-size: 5em;
+    color: rgba(0, 139, 139, 0.7);
+}
+
+.language {
+    color: darkcyan;
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+#project-container {
+    margin-top: 200px;
+}
+
+#project-heading {
+    text-align: center;
+    font-size: 3.5em;
+    font-family: 'Hind Siliguri', sans-serif;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+}
+
+#project-list {
+    counter-reset: index;
+    margin-top: 200px;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: 'Hind Siliguri', sans-serif;
+    width: 30%;
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+#project-list li {
+    counter-increment: index; 
+    border-bottom: 2px solid #606887;
+    padding: 1.5rem 0;
+}
+
+#project-list li::before {
+    content: counters(index, ".", decimal-leading-zero);
+    font-size: 1.5rem;
+    text-align: right;
+    font-weight: bold;
+    min-width: 50px;
+    padding-right: 12px;
+    font-variant-numeric: tabular-nums;
+    align-self: flex-start;
+    background-attachment: fixed;
+  }
