@@ -46,11 +46,12 @@ const handleScrolling = () => {
 
     handleAboutAnimation();
     handleProjectTitleAnimation();
+    handleProjectsAniamtion()
 };
 
 window.addEventListener('scroll', handleScrolling);
 
 
 function getScrollingPosition (container) {
-    return container.offsetTop + container.offsetHeight - window.innerHeight - 100;
+    return container.offsetTop  - window.innerHeight + 100;
 }

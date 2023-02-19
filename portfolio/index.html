@@ -19,6 +19,7 @@
 </head>
 
 <body>
+    <div id="body-overlay" class="hidden"></div>
     <!-- <div class="page-loading-screen">
         <p class="hello">H</p>
         <p class="hello">E</p>
@@ -43,9 +44,10 @@
             <div id="intro-overlay"></div>
             <p class="intro-heading">Hello! I'm Noah.</p>
             <p class="intro-heading">Nice to meet you!</p>
-            <p id="intro-content">I'm an self-taught web developer with a passion for coding. I love to bring ideas to life
+            <p id="intro-content">I'm an self-taught web developer with a passion for coding. I love to bring ideas to
+                life
                 with fluent effects and dynamic user experiences.</p>
-    
+
             <div id="icons-container">
                 <div class="icon-container">
                     <i class="fab fa-html5"></i>
@@ -74,17 +76,34 @@
 
     <div id="project-container">
         <p id="project-heading">Things I built</p>
-        <center><hr id="project-break"></center>
+        <center>
+            <hr id="project-break">
+        </center>
 
-        <ul id="project-list">
-            <li>Project 1</li>
-            <li>Project 1</li>
-            <li>Project 1</li>
-            <li>Project 1</li>
-            <li>Project 1</li>
-            <li>Project 1</li>
-            <li>Project 1</li>
-        </ul>
+        <div id="project-content-container">
+            <ul id="project-list">
+                <li>Project 1</li>
+                <li>Activity Tracker</li>
+                <li>Project 1</li>
+                <li>Project 1</li>
+                <li>Project 1</li>
+                <li>Project 1</li>
+                <li>Project 1</li>
+            </ul>
+
+            <div id="project-demon-container">
+                <div id="project-intro-container">
+                    <p id="project-title">Activity Tracker</p>
+                    <p id="project-intro">A fitness tool that calculates and tracks calories from activities including
+                        metabolic energy spend</p>
+                    <p class="tools">React.js</p>
+                    <p class="tools">Node.js</p>
+                </div>
+                <video id="project-vid" src="./assets/activity-tracker-vid.mp4" muted loop
+                    autoplay></video>
+            </div>
+        </div>
+
     </div>
 
 </body>
