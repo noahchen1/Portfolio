@@ -7,14 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/07acd1c277.js" defer crossorigin="anonymous"></script>
+    <script src="projectData.js" defer></script>
+    <script src="script.js" defer></script>
     <title>Profile</title>
 </head>
 
@@ -76,34 +74,27 @@
 
     <div id="project-container">
         <p id="project-heading">Things I built</p>
-        <center>
-            <hr id="project-break">
-        </center>
-
+        <center><hr id="project-break"></center>
         <div id="project-content-container">
-            <ul id="project-list">
-                <li>Project 1</li>
-                <li>Activity Tracker</li>
-                <li>Project 1</li>
-                <li>Project 1</li>
-                <li>Project 1</li>
-                <li>Project 1</li>
-                <li>Project 1</li>
-            </ul>
+            <ul id="project-list"></ul>
 
             <div id="project-demon-container">
                 <div id="project-intro-container">
                     <p id="project-title">Activity Tracker</p>
                     <p id="project-intro">A fitness tool that calculates and tracks calories from activities including
                         metabolic energy spend</p>
-                    <p class="tools">React.js</p>
-                    <p class="tools">Node.js</p>
                 </div>
-                <video id="project-vid" src="./assets/activity-tracker-vid.mp4" muted loop
-                    autoplay></video>
+                <video id="project-vid" src="./assets/videos/Activity Tracker.mp4" muted loop autoplay></video>
             </div>
         </div>
+    </div>
 
+    <div id="cv-container">
+        <div id="cv-header">
+            <div id="cv-header-overlay"></div>
+            <div id="cv-header-text">Where I've Been</div>
+            <img id="cv-header-bg" src="./assets/project session img.jpg">
+        </div>
     </div>
 
 </body>

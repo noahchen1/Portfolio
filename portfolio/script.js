@@ -1,3 +1,19 @@
+
+const createProjectList = (() => {
+
+    const projectList = document.getElementById('project-list');
+
+    projectArr.forEach(project => {
+        const listItem = document.createElement('li');
+
+        listItem.innerText = project.name;
+        listItem.classList.add('project-link');
+        projectList.append(listItem);
+    });
+
+})();
+
+
 const handleScrolling = () => {
     const handleAboutAnimation = () => {
         const container = document.getElementById('intro-container');
@@ -32,7 +48,7 @@ const handleScrolling = () => {
         const container = document.getElementById('project-container');
         const heading = document.getElementById('project-heading');
         const hr = document.getElementById('project-break');
-        
+
         if (window.scrollY >= getScrollingPosition(container)) {
             heading.style.opacity = '1';
             heading.style.transform = 'translateY(0)';
@@ -44,14 +60,66 @@ const handleScrolling = () => {
         }
     };
 
+    const handleProjectsAniamtion = () => {
+        const projects = document.querySelectorAll('.project-link');
+        const overLay = document.getElementById('body-overlay');
+        const container = document.getElementById('project-intro-container');
+        const title = document.getElementById('project-title');
+        const intro = document.getElementById('project-intro');
+        const vid = document.getElementById('project-vid');
+
+        if (window.scrollY >= getScrollingPosition(container) && window.scrollY <= container.offsetTop) {
+            overLay.style.animation = 'project-overlay-in 1s ease-out forwards';
+            overLay.classList.remove('hidden');
+        } else {
+            overLay.style.animation = 'project-overlay-out 1s ease-out forwards';
+        }
+
+        projects.forEach((project, idx) => {
+            project.onmouseover = () => {
+                const tools = document.querySelectorAll('.tools');
+
+                tools.forEach(tool => tool.remove());
+
+                title.innerText = projectArr[idx].name;
+                intro.innerText = projectArr[idx].description;
+                vid.src = `./assets/videos/${projectArr[idx].name}.mp4`
+
+                projectArr[idx].tools.forEach(tool => {
+                    const p = document.createElement('p');
+
+                    p.innerText = tool;
+                    p.classList.add('tools');
+                    container.append(p);
+                })
+            };
+        });
+    };
+
+    const handleCvAniamation = () => {
+        const container = document.getElementById('cv-container');
+        const overlay = document.getElementById('cv-header-overlay');
+        const bg = document.getElementById('cv-header-bg');
+
+        if (window.scrollY >= getScrollingPosition(container)) {
+            const projectOverlay = document.getElementById('body-overlay');
+
+            // projectOverlay.style.animation = 'project-overlay-out 1s ease-out forwards';
+            overlay.style.animation = 'text-transition 1.5s forwards';
+            bg.style.animation = 'blur-filter 1s ease forwards';
+            bg.style.animationDelay = '1.5s';
+        }
+    };
+
     handleAboutAnimation();
     handleProjectTitleAnimation();
-    handleProjectsAniamtion()
+    handleProjectsAniamtion();
+    handleCvAniamation();
 };
 
 window.addEventListener('scroll', handleScrolling);
 
 
-function getScrollingPosition (container) {
-    return container.offsetTop  - window.innerHeight + 100;
+function getScrollingPosition(container) {
+    return container.offsetTop - window.innerHeight + 100;
 }

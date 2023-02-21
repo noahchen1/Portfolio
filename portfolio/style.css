@@ -26,6 +26,31 @@
     }
 }
 
+@keyframes project-overlay-in {
+    0% {
+        background-color: transparent;
+    }
+
+    100% {
+        background-color: #2b2b33;
+    }
+}
+
+@keyframes project-overlay-out {
+    0% {
+        background-color: #2b2b33;
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
+@keyframes blur-filter {
+    0% {filter: blur(0px);}
+    100% {filter: blur(8px);}
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -146,9 +171,11 @@ body {
 }
 
 #project-content-container {
+    color: #f3f2f9;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 300px;
 }
 
 #project-list {
@@ -156,19 +183,21 @@ body {
     color: rgba(0, 0, 0, 0.7);
     font-family: 'Hind Siliguri', sans-serif;
     width: 30%;
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: 600;
     z-index: 99;
 }
 
 #project-list li {
+    color: #f3f2f9;
     counter-increment: index;
     list-style: none;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
     background:
         linear-gradient(to right,
-            #4e5364,
-            #ffffff),
+        #f3f2f9,
+        #f3f2f9
+        ),
         linear-gradient(to right,
             rgba(255, 0, 0, 1),
             rgba(255, 0, 180, 1),
@@ -202,33 +231,36 @@ body {
 
 #project-demon-container {
     width: 40%;
+    margin-left: 5%;
     height: auto;
     text-align: center;
     z-index: 99;
+    align-self: flex-start;
 }
 
 #project-title {
-    font-size: 2em;
+    font-size: 2rem;
     font-weight: 600;
     color: (0, 0, 0, 0.7);
 }
 
 #project-intro {
-    margin: 2em 2em 1em 2em;
-    font-size: 1.2em;
+    margin: 2em 2em 0 2em;
+    font-size: 1.2rem;
     left: 0;
     right: 0;
 }
 
 .tools {
-    margin: 0.5em 0;
+    display: inline-block;
+    margin: 1rem 0.5rem;
     font-weight: 800;
-    font-size: 1.2em;
-    color: rgba(0, 139, 139, 0.7);
+    font-size: 1.2rem;
+    color: rgb(3, 192, 192);
 }
 
 #project-vid {
-    width: 100%;
+    width: 80%;
     height: auto;
     object-fit: cover;
 }
@@ -240,5 +272,52 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: black;
+    animation: project-overlay-in 1s ease-in forwards;
 }
+
+.hidden {
+    display: none;
+}
+
+#cv-container {
+    margin-top: 400px;
+}
+
+#cv-header {
+    height: 500px;
+    position: relative; 
+    text-align: center;
+    margin: 150px 2em;
+}
+
+#cv-header-overlay {
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+}
+
+#cv-header-bg {
+    object-fit: cover;
+    top: 0;
+    right: 0;
+    width: 99%;
+    height: 90%;
+    margin: 1em 1em;
+}
+
+#cv-header-text {
+    position: absolute;
+    color: whitesmoke;
+    font-size: 5em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    top: 35%;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
