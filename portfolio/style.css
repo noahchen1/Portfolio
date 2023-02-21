@@ -1,3 +1,7 @@
+@keyframes fade-in {
+    100% { opacity: 1; }
+}
+
 @keyframes video-transform {
     0% {}
 
@@ -32,13 +36,13 @@
     }
 
     100% {
-        background-color: #2b2b33;
+        background-color: #2b2b33e3;
     }
 }
 
 @keyframes project-overlay-out {
     0% {
-        background-color: #2b2b33;
+        background-color: #2b2b33e3;
     }
 
     100% {
@@ -51,6 +55,36 @@
     100% {filter: blur(8px);}
 }
 
+@keyframes transition-layer {
+    0% { width: 50%; transform: skewx(50deg) translateX(-300px); }
+    50% { width: 600%; transform: skewx(50deg) translateX(-250px); }
+    100% { transform: skewx(50deg) translateX(3000px); width: 500%; }
+}
+
+@keyframes rainbow-text-simple-animation {
+    0% {
+        background-size: 100%;
+    }
+    80% {
+        background-size: 650%;
+    }
+    100% {
+        background-size: 650%;
+    }
+}
+
+@keyframes rainbow-text-simple-animation-rev {
+    0% {
+        background-size: 650%;
+    }
+    40% {
+        background-size: 650%;
+    }
+    100% {
+        background-size: 100%;
+    }
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -60,6 +94,83 @@
 
 body {
     position: relative;
+    overflow-x: hidden;
+}
+
+.body-overflow {
+    overflow: hidden;
+}
+
+.page-loading-screen {
+    height: 100vh;
+    width: auto;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-loading-screen p {
+    display: inline-block;
+    margin-top: 5em;
+    font-size: 5em;
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.7);
+    padding-left: 0.5em;
+    letter-spacing: 0.5em;
+    opacity: 0;
+    animation: fade-in 1s forwards;
+}
+
+.page-loading-screen p:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.page-loading-screen p:nth-child(2) {
+    animation-delay: 0.7s;
+}
+
+.page-loading-screen p:nth-child(3) {
+    animation-delay: 1.0s;
+}
+
+.page-loading-screen p:nth-child(4) {
+    animation-delay: 1.3s;
+}
+
+.page-loading-screen p:nth-child(5) {
+    animation-delay: 1.6s;
+}
+
+.welcome-text {
+    position: relative;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.welcome-text-cover {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    animation: text-transition 7s forwards;
+}
+
+.welcome-text h1 {
+    margin-top: 0.5em;
+    font-size: 2em;
+    letter-spacing: 0.2em;
+}
+
+.transition {
+    position: absolute;
+    background-color: skyblue;
+    width: 20%;
+    height: 100%;
+    top: 0;
+    left: -500px;
+    animation: transition-layer 2.5s forwards;
+    animation-delay: 3s;
 }
 
 #banner-container {
@@ -176,6 +287,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 300px;
+    height: 800px;
 }
 
 #project-list {
@@ -190,6 +302,7 @@ body {
 
 #project-list li {
     color: #f3f2f9;
+    cursor: pointer;
     counter-increment: index;
     list-style: none;
     padding: 1rem 0;
@@ -229,18 +342,22 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
+.links {
+    text-decoration: none;
+    color: #f3f2f9;
+}
+
 #project-demon-container {
     width: 40%;
     margin-left: 5%;
     height: auto;
     text-align: center;
     z-index: 99;
-    align-self: flex-start;
 }
 
 #project-title {
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 2.5rem;
+    font-weight: 800;
     color: (0, 0, 0, 0.7);
 }
 
@@ -283,11 +400,24 @@ body {
     margin-top: 400px;
 }
 
+#cv-header-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 200px;
+}
+
 #cv-header {
-    height: 500px;
-    position: relative; 
     text-align: center;
-    margin: 150px 2em;
+    font-size: 7rem;
+    font-weight: 800;
+    width: 50%;
+    background-color: #CA4246;
+    background-image: linear-gradient(45deg, rgba(89,89,89,1) 11%, rgba(125,46,177,1) 26%, rgba(253,29,29,1) 60%, rgba(252,176,69,1) 100%);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
 }
 
 #cv-header-overlay {
@@ -321,3 +451,157 @@ body {
     z-index: 2;
 }
 
+#cv-content {
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #606887;
+}
+
+.job-container {
+    width: 50%;
+}
+
+.company-container {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 800;
+    background-color: #f3f2f9;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.job-description {
+    background-color: #f3f2f9;
+    margin: 10px 0;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.job-title {
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.job-tools {
+    display: flex;
+}
+
+.job-tools div {
+    font-size: 1rem;
+    background-color: #2c3599;
+    color: white;
+    padding: 5px 15px;
+    margin: 15px 5px 0 0;
+    border-radius: 20px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 500px;
+    margin-bottom: 50px;
+}
+
+.footer-text {
+    margin: 0.5em 0;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 1000px) {
+    .page-loading-screen p {
+        font-size: 2.5em;
+    }
+
+    .welcome-text h1 {
+        font-size: 1rem;
+    }
+
+    #banner-content {
+        font-size: 3rem;
+    }
+    
+    #portrait {
+        display: none;
+    }
+
+    #intro-container {
+        right: 0;
+        left: 0;
+    }
+
+    #intro-text-container {
+        width: 100%;
+        height: auto;
+        position: relative;
+        margin-right: 0;
+        margin-left: 10px;
+    }
+
+    .intro-heading {
+        font-size: 2.5em;
+    }
+
+    #icons-container {
+        margin-top: 20px;
+        width: 90%;
+    }
+
+    .icon-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fab {
+        font-size: 3rem;
+    }
+
+    .language {
+        color: darkcyan;
+        font-weight: 700;
+        margin-top: 5px;
+    }
+
+    #project-heading {
+        font-size: 2rem;
+        margin-bottom: 0;
+    }
+
+    #project-demon-container {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+
+    #project-content-container {
+        height: auto;
+        margin-top: 50px;
+    }
+
+    #project-list {
+        font-size: 1rem;
+        width: 90%;
+    }
+
+    .tools {
+        display: none;
+    }
+
+    #cv-container {
+        margin-top: 100px;
+    }
+
+    #cv-header {
+        font-size: 3rem;
+        width: 80%;
+    }
+
+    .job-container {
+        width: 90%;
+    }
+    
+    footer {
+        margin-top: 200px;
+    }
+}

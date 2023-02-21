@@ -1,13 +1,40 @@
+const startAniamtion = (() => {
+    const pageIntroContainer = document.querySelector('.page-loading-screen');
+
+    setTimeout(() => {
+        const paragraph = pageIntroContainer.querySelectorAll('.hello');
+        const welcomeText = pageIntroContainer.querySelector('.welcome-text');
+
+        welcomeText.parentNode.removeChild(welcomeText);
+        for (var i = 0; i < paragraph.length; i++) {
+            paragraph[i].remove();
+        }
+    }, 4000);
+
+    setTimeout(() => {
+        const body = document.querySelector('.body-overflow')
+        const mainPage = document.getElementById('main-page')
+
+        pageIntroContainer.parentNode.removeChild(pageIntroContainer);
+        body.classList.remove('body-overflow')
+        mainPage.classList.remove('hidden')
+
+    }, 5500);
+})();
 
 const createProjectList = (() => {
-
     const projectList = document.getElementById('project-list');
 
     projectArr.forEach(project => {
         const listItem = document.createElement('li');
+        const link = document.createElement('a');
 
-        listItem.innerText = project.name;
+        link.href = project.link;
+        link.target = '_blank';
+        link.innerText = project.name;
+        link.classList.add('links');
         listItem.classList.add('project-link');
+        listItem.append(link);
         projectList.append(listItem);
     });
 
@@ -63,12 +90,13 @@ const handleScrolling = () => {
     const handleProjectsAniamtion = () => {
         const projects = document.querySelectorAll('.project-link');
         const overLay = document.getElementById('body-overlay');
-        const container = document.getElementById('project-intro-container');
+        const container = document.getElementById('project-content-container');
+        const introContainer = document.getElementById('project-intro-container');
         const title = document.getElementById('project-title');
         const intro = document.getElementById('project-intro');
         const vid = document.getElementById('project-vid');
 
-        if (window.scrollY >= getScrollingPosition(container) && window.scrollY <= container.offsetTop) {
+        if (window.scrollY >= getScrollingPosition(container) && window.scrollY <= container.offsetTop + container.offsetHeight - 120) {
             overLay.style.animation = 'project-overlay-in 1s ease-out forwards';
             overLay.classList.remove('hidden');
         } else {
@@ -90,7 +118,7 @@ const handleScrolling = () => {
 
                     p.innerText = tool;
                     p.classList.add('tools');
-                    container.append(p);
+                    introContainer.append(p);
                 })
             };
         });
@@ -98,16 +126,17 @@ const handleScrolling = () => {
 
     const handleCvAniamation = () => {
         const container = document.getElementById('cv-container');
-        const overlay = document.getElementById('cv-header-overlay');
-        const bg = document.getElementById('cv-header-bg');
+        const header = document.getElementById('cv-header');
 
-        if (window.scrollY >= getScrollingPosition(container)) {
-            const projectOverlay = document.getElementById('body-overlay');
-
-            // projectOverlay.style.animation = 'project-overlay-out 1s ease-out forwards';
-            overlay.style.animation = 'text-transition 1.5s forwards';
-            bg.style.animation = 'blur-filter 1s ease forwards';
-            bg.style.animationDelay = '1.5s';
+        if (window.scrollY >= getScrollingPosition(container) + 300) {
+            header.style.opacity = '1';
+            header.style.transform = 'translateY(0)';
+            header.style.transition = '1s ease-in-out';
+            header.style.animation = 'rainbow-text-simple-animation 0.5s ease-in forwards';
+            header.style.animationDelay = '1s';
+        } else {
+            header.style.opacity = '0';
+            header.style.transform = 'translateY(150px)';
         }
     };
 
