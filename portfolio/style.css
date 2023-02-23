@@ -483,6 +483,14 @@ body {
     margin-bottom: 10px;
 }
 
+.job-content-container {
+    margin: 20px 0 20px 25px;
+}
+
+.job-content li {
+    margin: 5px 0;
+}
+
 .job-tools {
     display: flex;
 }
