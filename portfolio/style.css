@@ -497,6 +497,7 @@ body {
 }
 
 footer {
+    position: relative;
     text-align: center;
     margin-top: 500px;
     margin-bottom: 50px;
@@ -507,6 +508,36 @@ footer {
     font-size: 1em;
     font-weight: 500;
 }
+
+#footer-icons-container {
+    position: absolute;
+    z-index: 99;
+    left: 0; 
+    right: 0;
+    top: -30px;
+}
+
+.footer-icons {
+    font-size: 1.5rem;
+    margin: 0 2px;
+}
+
+.fa-github {
+    color: #171515;
+}
+
+.fa-linkedin-square {
+    color: #0077b5;
+}
+
+.fa-facebook-square {
+    color: #4267B2;
+}
+
+.fa-instagram {
+    color: #8a3ab9;
+}
+
 
 @media only screen and (max-width: 1000px) {
     .page-loading-screen p {

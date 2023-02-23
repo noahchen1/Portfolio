@@ -140,10 +140,22 @@ const handleScrolling = () => {
         }
     };
 
+    const handleFooter = () => {
+        const overLay = document.getElementById('body-overlay');
+        const footer = document.getElementById('footer');
+
+        if (window.scrollY >= getScrollingPosition(footer) - 100) {
+            overLay.classList.add('hidden');
+        } else {
+            overLay.classList.remove('hidden');
+        }
+    }
+
     handleAboutAnimation();
     handleProjectTitleAnimation();
     handleProjectsAniamtion();
     handleCvAniamation();
+    // handleFooter();
 };
 
 window.addEventListener('scroll', handleScrolling);
