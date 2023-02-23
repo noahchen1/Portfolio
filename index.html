@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <script src="https://kit.fontawesome.com/07acd1c277.js" defer crossorigin="anonymous"></script>
+    <script src="projectData.js" defer></script>
+    <script src="script.js" defer></script>
     <title>Profile</title>
 </head>
+
 <body class="body-overflow">
+    <div id="body-overlay" class="hidden"></div>
     <div class="page-loading-screen">
         <p class="hello">H</p>
         <p class="hello">E</p>
@@ -25,263 +32,119 @@
             <h1>Welcome To My Page</h1>
         </div>
         <div class="transition"></div>
-        </div>
+    </div>
     </div>
 
-    <section class="main-portfolio-page page-visibility">
+    <section id="main-page" class="hidden">
+        <div id="banner-container">
+            <video id="banner-bg" src="./assets/videos/sampleVid.mp4" muted loop autoplay></video>
+            <p id="banner-content">About me</p>
+        </div>
 
-        <div class="about">
-            <div class="about-showcase">
-                <video class="about-showcase-video" src="sampleVid.mp4" muted loop autoplay></video>
-                <div class="about-text">
-                    <p>About me</p>
+        <div id="intro-container">
+            <div id="intro-text-container">
+                <div id="intro-overlay"></div>
+                <p class="intro-heading">Hello! I'm Noah.</p>
+                <p class="intro-heading">Nice to meet you!</p>
+                <p id="intro-content">I'm an self-taught web developer with a passion for coding. I love to bring ideas
+                    to
+                    life
+                    with fluent effects and dynamic user experiences.</p>
+
+                <div id="icons-container">
+                    <div class="icon-container">
+                        <i class="fab fa-html5"></i>
+                        <div class="language">HTML5</div>
+                    </div>
+                    <div class="icon-container">
+                        <i class="fab fa-css3-alt"></i>
+                        <div class="language">CSS3</div>
+                    </div>
+                    <div class="icon-container">
+                        <i class="fab fa-js-square"></i>
+                        <div class="language">JavaScript</div>
+                    </div>
+                    <div class="icon-container">
+                        <i class="fab fa-react"></i>
+                        <div class="language">React</div>
+                    </div>
+                    <div class="icon-container">
+                        <i class="fab fa-node-js"></i>
+                        <div class="language">Node.js</div>
+                    </div>
                 </div>
             </div>
+            <img id="portrait" src="./assets/portrait.png">
+        </div>
 
-            <div class="about-me">
-                <div class="about-me-text">
-                    <div class="about-text-wrapper"></div>
-                    <p class="intro-text">Hello! I'm Noah.</p>
-                    <p class="intro-text">Nice to meet you!</p>
-                    <p class="my-intro">I'm an self-taught web developer with a passion for coding. I love to bring ideas to life with fluent effects and dynamic user experiences.</p>
+        <div id="project-container">
+            <p id="project-heading">Things I built</p>
+            <center>
+                <hr id="project-break">
+            </center>
+            <div id="project-content-container">
+                <ul id="project-list"></ul>
 
-                    <div class="techStack">
-                        <div class="individual-tech">
-                            <i class="fab fa-html5"></i>
-                            <div class="tech-name">HTML5</div>
-                        </div>
-                        <div class="individual-tech">
-                            <i class="fab fa-css3-alt"></i>
-                            <div class="tech-name">CSS3</div>
-                        </div>
-                        <div class="individual-tech">
-                            <i class="fab fa-js-square"></i>
-                            <div class="tech-name">JavaScript</div>
-                        </div>
-                        <div class="individual-tech">
-                            <i class="fab fa-react"></i>
-                            <div class="tech-name">React</div>
-                        </div>
-                        <div class="individual-tech">
-                            <i class="fab fa-node-js"></i>
-                            <div class="tech-name">Node.js</div>
-                        </div>
+                <div id="project-demon-container">
+                    <div id="project-intro-container">
+                        <p id="project-title">Activity Tracker</p>
+                        <p id="project-intro">A fitness tool that calculates and tracks calories from activities
+                            including
+                            metabolic energy spend</p>
                     </div>
-
-                    <!--
-                    <div class="skill-level">
-        
-                        <span class="skill-name html-skill-name">HTML</span>
-                        
-                        <div class="individual-skill-level">
-                            <div class="skill-level-bar"></div>
-                            <span class="skill-level-name">Beginner</span>
-                        </div>
-                        <div class="individual-skill-level">
-                            <div class="skill-level-bar intermedia-level"></div>
-                            <span class="skill-level-name">Intermedia</span>
-                        </div>
-                        <div class="individual-skill-level">
-                            <div class="skill-level-bar"></div>
-                            <span class="skill-level-name">Advanced</span>
-                        </div>
-                        <div class="individual-skill-level">
-                            <div class="skill-level-bar"></div>
-                            <span class="skill-level-name">Expert</span>
-                        </div>
-
-                        <span class="skill-name css-skill-name">CSS</span>
-                        
-                        <div class="individual-skill-level">
-                            <div class="skill-level-bar"></div>
-                            <span class="skill-level-name">Beginner</span>
-                        </div>
-                        <div class="individual-skill-level">
-                            <div class="skill-level-bar intermedia-level"></div>
-                            <span class="skill-level-name">Intermedia</span>
-                        </div>
-                        <div class="individual-skill-level">
-                            <div class="skill-level-bar"></div>
-                            <span class="skill-level-name">Advanced</span>
-                        </div>
-                        <div class="individual-skill-level">
-                            <div class="skill-level-bar"></div>
-                            <span class="skill-level-name">Expert</span>
-                        </div>
-
-                        <span class="skill-name">Javascript</span>
-                        
-                        <div class="individual-skill-level">
-                            <div class="skill-level-bar"></div>
-                            <span class="skill-level-name">Beginner</span>
-                        </div>
-                        <div class="individual-skill-level">
-                            <div class="skill-level-bar intermedia-level"></div>
-                            <span class="skill-level-name">Intermedia</span>
-                        </div>
-                        <div class="individual-skill-level">
-                            <div class="skill-level-bar"></div>
-                            <span class="skill-level-name">Advanced</span>
-                        </div>
-                        <div class="individual-skill-level">
-                            <div class="skill-level-bar"></div>
-                            <span class="skill-level-name">Expert</span>
-                        </div>
-                    </div> -->
+                    <video id="project-vid" src="./assets/videos/Activity Tracker.mp4" muted loop autoplay></video>
                 </div>
-                
-                <img class="portfolio-picture" src="about picture.jpg">
             </div>
         </div>
 
-        <div class="work-samples">
-            <P class="work-samples-title">A few things I built</P>
-            <center><hr class='work-samples-hr'></center>
-
-            <!-- <div class="spotify-player">
-                <div class="spotify-player-intro">
-                    <p class="webApp-title">Music Player</p>
-                    <p class="webApp-feature">A player powered by Spotify API</p>
-                    <P class="framework">React.js</P>
-                    <p class="framework">Node.js</p>
-                </div>
-
-                <div class="webApp-vid-container">
-                    <div class="webApp-vid-cover"></div>
-                    <video class="webApp-vid" src="mustic player video.mp4" muted loop autoplay></video>
-                </div>
-
+        <div id="cv-container">
+            <div id="cv-header-container">
+                <h1 id="cv-header">
+                    Professional Experience
+                </h1>
             </div>
 
-            <div class="nutrition-search-tool">
-                <div class="search-tool-intro">
-                    <p class="search-tool-title">Nutrients Search Tool</p>
-                    <p class="search-tool-feature">A search tool that allows you to look up nutrients associated with any food or ingredient list</p>
-                    <P class="search-tool-framewrok">React.js</P>
+            <div id="cv-content">
+                <div class="job-container">
+                    <div class="company-container">
+                        <div class="company-name">JAG Global Learning</div>
+                        <div class="duration">May, 2022 - Present</div>
+                    </div>
+                    <div class="job-description">
+                        <div class="job-title">Web Developer</div>
+                        <div class="job-content-container"> 
+                            <ul class="job-content">
+                                <li>Collaborated with cross-functional team to drive agile software development.</li>
+                                <li>Built several e-learning applications with dynamic content.</li>
+                                <li>Leveraged rich text editor to develop internal tools for updating web content.</li>
+                                <li>Created a customizable employee training application with React.js and Redux.</li>
+                                <li>Led the development of a web-based kiosk application for a medical conference.</li>
+                                <li>Managed application lifecycle with Git and JIRA.</li>
+                                <li>Tested product features to meet 508 accessibility requirements.</li>
+                            </ul>
+                        </div>
+                        <div class="job-tools">
+                            <div>React.js</div>
+                            <div>Javascript</div>
+                            <div>Redux</div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="search-tool-vid-container">
-                    <div class="search-tool-vid-cover"></div>
-                    <video class="search-tool-vid" src="nutrients look up.mp4" muted loop autoplay></video>
-                </div>
-
             </div>
-
-
-
-            <div class="activity-tracker">
-                <div class="activity-tracker-intro">
-                    <p class="activity-tracker-title">Activity Tracker</p>
-                    <p class="activity-tracker-feature">A fitness tool that calculates and tracks calories from activities including metabolic energy spend</p>
-                    <p class="activity-tracker-framework">React.js</p>
-                    <p class="activity-tracker-framework">Node.js</p>
-                </div>
-
-                <div class="activity-tracker-vid-container">
-                    <div class="activity-tracker-vid-cover"></div>
-                    <video class="activity-tracker-vid" src="activity tracker video.mp4" muted loop autoplay></video>
-                </div>
-
-            </div> -->
-
         </div>
 
-        <!-- <div class="project-showcase">
-            <div class="project-header">
-                <div class="project-header-wrapper"></div>
-                <div class="project-text"><p>Projects</p></div>
-                <img class="project-header-img" src="project session img.jpg">
+        <footer id="footer">
+            <div id="footer-icons-container">
+                <a href="https://github.com/noahchen1" target="_blank"><i class="fa fa-github footer-icons"></i></a>
+                <a href="https://www.linkedin.com/in/noah-chen-1a49a0119/" target="_blank"><i class="fa fa-linkedin-square footer-icons"></i></a>
+                <a href="https://www.facebook.com/zack.baron.963" target="_blank"><i class="fa fa-facebook-square footer-icons"></i></a>
+                <a href="https://www.instagram.com/zack.baron.963" target="_blank"><i class="fa fa-instagram footer-icons"></i></a>
             </div>
-        </div> -->
-
-        <div class="project-list">
-
-            <div class="project">
-                <div class="project-hover">
-                    <div class="hover-text">
-                        <p class="project-name">Music Player</p>
-                        <p class="tech-stack">React.js/Node.js</p>
-                        <a href="https://songs-player.herokuapp.com" target="_blank">
-                            <button class="view-page-btn">View Page</button>
-                        </a>
-                    </div>
-                </div>
-                <img class="project-img" src="project picture/Spotify Player.png">
-            </div>
-
-            <div class="project">
-                <div class="project-hover">
-                    <div class="hover-text">
-                        <p class="project-name">Activity Tracker</p>
-                        <p class="tech-stack">React.js/Node.js</p>
-                        <a href='https://activity-trackerr.herokuapp.com/' target="_blank">
-                            <button class="view-page-btn">View Page</button>
-                        </a>
-                    </div>
-                </div>
-                <img class="project-img" src="project picture/activity tracker.png">
-            </div>
-
-            <div class="project">
-                <div class="project-hover">
-                    <div class="hover-text">
-                        <p class="project-name">Ecommerce Shop</p>
-                        <p class="tech-stack">HTML/CSS/JavaScript</p>
-                        <a href="https://ecom-shoping-page.netlify.app" target="_blank">
-                            <button class="view-page-btn">View Page</button>
-                        </a>
-                    </div>
-                </div>
-                <img class="project-img" src="project picture/shop.PNG">
-            </div>
-
-            <div class="project">
-                <div class="project-hover">
-                    <div class="hover-text">
-                        <p class="project-name">Calculator</p>
-                        <p class="tech-stack">HTML/CSS/JavaScript</p>
-                        <a href="https://basic-jscalculator.netlify.app" target="_blank">
-                            <button class="view-page-btn">View Page</button>
-                        </a>
-                    </div>
-                </div>
-                <img class="project-img" src="project picture/calculator.PNG">
-            </div>
-
-            <div class="project">
-                <div class="project-hover">
-                    <div class="hover-text">
-                        <p class="project-name">Nutrients Seasrch Tool</p>
-                        <p class="tech-stack">React.js</p>
-                        <a href="https://nutrition-lookup.herokuapp.com/" target="_blank">
-                            <button class="view-page-btn">View Page</button>
-                        </a>
-                        
-                    </div>
-                </div>
-                <img class="project-img" src="project picture/nutrients search tool.PNG">
-            </div>
-
-            <div class="project">
-                <div class="project-hover">
-                    <div class="hover-text">
-                        <p class="project-name">Student Profile</p>
-                        <p class="tech-stack">React.js</p>
-                        <a href="https://student-grades.netlify.app/" target="_blank">
-                            <button class="view-page-btn">View Page</button>
-                        </a>
-                    </div>
-                </div>
-                <img class="project-img" src="project picture/studentprofile.PNG">
-            </div>
-
-        </div>
-
-        <div class="footer">
-            <p class="footer-text">&#169; Noah Chen 2021</p>
+            <p class="footer-text">&#169; Noah Chen 2023</p>
             <p class="footer-text">nuoya1996@gmail.com</p>
-        </div>
+        </footer>
 
     </section>
 </body>
+
 </html>
